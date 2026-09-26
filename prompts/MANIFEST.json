@@ -1,0 +1,106 @@
+{
+  "template": "Let's Get Rich Team",
+  "version": "team-v1.0",
+  "repo": "https://github.com/onlyraypotts-glitch/crypto-trading-bot-template",
+  "install": "Fetch each file from raw.githubusercontent.com/<repo>/<COMMIT_SHA>/prompts/<file> at the SAME commit as this manifest; verify sha256; save as a skill named skill_name.",
+  "files": [
+    {
+      "file": "protocol.md",
+      "skill_name": "protocol",
+      "description": "Desk protocol: the shared rules every bot on the team reads first, every session.",
+      "bytes": 10629,
+      "sha256": "7b62875e29a705911699ebdcdbf92fa7009d391aaa980ae7d2538607541f490a"
+    },
+    {
+      "file": "hq.md",
+      "skill_name": "hq",
+      "description": "HQ: synthesizes the specialists' evidence into one decision per opportunity, runs the disagreement protocol, writes the daily report and weekly review.",
+      "bytes": 8356,
+      "sha256": "67425fd3fa6f20a6df3be87c601173f5f4d75b1a4f6d72f5abd9266481d14cf2"
+    },
+    {
+      "file": "alpha-hunter.md",
+      "skill_name": "alpha-hunter",
+      "description": "Alpha Hunter: discovery of early, explainable opportunities on Solana, Base and Ethereum.",
+      "bytes": 5158,
+      "sha256": "c83028e874f09e3c1c44033b3ed72c1a66c4c70d3226fdad1b9ddd6ffa749a12"
+    },
+    {
+      "file": "smart-money.md",
+      "skill_name": "smart-money",
+      "description": "Smart Money: wallets with a realized, repeatable on-chain record; who's entering and exiting.",
+      "bytes": 5628,
+      "sha256": "5c08abbd66b88c244519cb3aa014195d1b0bebe72e9c2b01c851ebb2933e729b"
+    },
+    {
+      "file": "crypto-radar.md",
+      "skill_name": "crypto-radar",
+      "description": "Crypto Radar: news, social velocity, macro, catalysts, narratives and the market regime snapshot.",
+      "bytes": 5464,
+      "sha256": "c9cc0d52bc92939547248f7850287a1ea5c4978db4436f4ab5b89001f100cbdb"
+    },
+    {
+      "file": "rug-shield.md",
+      "skill_name": "rug-shield",
+      "description": "Rug Shield: adversarial security review; an evidence-backed REJECT is a veto that can't be outvoted.",
+      "bytes": 5594,
+      "sha256": "efb746bee60a81823409643d5801c8ede9d716fde7ef8eebb38f5b532ab8b00c"
+    },
+    {
+      "file": "quant-lab.md",
+      "skill_name": "quant-lab",
+      "description": "Quant Lab: calibration, signal value, strategy leaderboard, bias control, immutable records, weekly research lab.",
+      "bytes": 6062,
+      "sha256": "1fba08feff50ba3d05eebdaabeb749628478fac539caff8e8d008a2228d595a1"
+    },
+    {
+      "file": "risk-execution.md",
+      "skill_name": "risk-execution",
+      "description": "Risk & Execution: costs, liquidity, exposure and limits; an evidence-backed REJECT is a veto.",
+      "bytes": 5817,
+      "sha256": "fe6e6e52788a74590ef995230a48b276201aa3e36847ac6f3639609148dcbf3a"
+    },
+    {
+      "file": "crypto-intelligence-os.md",
+      "skill_name": "crypto-intelligence-os",
+      "description": "The operating system every bot follows: regime first, evidence-graded research, narrow yes/no scoring, calibration, backtest-to-production pipeline, risk engine, self-improvement that never loosens hard limits.",
+      "bytes": 18613,
+      "sha256": "71f40062c1f2d4fb13e79342b12f07b95f25f026118d918c5381dad5b677737d"
+    },
+    {
+      "file": "trading-safety-rules.md",
+      "skill_name": "trading-safety-rules",
+      "description": "Locked risk rules, loss ladder and entry bar every bot follows before any trading suggestion or safety audit.",
+      "bytes": 3204,
+      "sha256": "eccbec170e5f64d21256865f733111304a6dec8cf11f012842a9daf517508d4b"
+    },
+    {
+      "file": "autonomous-crypto-trading.md",
+      "skill_name": "autonomous-crypto-trading",
+      "description": "How approved desk decisions are executed from the bot's own capped Coinbase CDP wallet (or sent as move cards in manual mode).",
+      "bytes": 13750,
+      "sha256": "61a8905a2f86fc8e92e67717104c83df2c632e2674f24258b82f36bcdf570212"
+    },
+    {
+      "file": "cdp-wallet-setup.md",
+      "skill_name": "cdp-wallet-setup",
+      "description": "Step-by-step setup of the capped Coinbase CDP Server Wallet engine; nothing trades live without the owner's typed yes.",
+      "bytes": 8198,
+      "sha256": "9815089ea5812b425df2de17d17aa831dd7d0bdfddea2b98288ad29e14543735"
+    },
+    {
+      "file": "robinhood-trading.md",
+      "skill_name": "robinhood-trading",
+      "description": "Full Robinhood trader master prompt (stocks, ETFs, crypto, optional long options): manual mode first, owner-set caps, hard safety limits.",
+      "bytes": 110786,
+      "sha256": "2f29a0258c7c79e484efdcba4d2fa987dfe7f47952663a71ac544154312ebcc7"
+    },
+    {
+      "file": "robinhood-trading-rules.md",
+      "skill_name": "robinhood-trading-rules",
+      "description": "Compact Robinhood rules to read before every trading action, routine run or report: owner-set caps, loss triggers, execution, buy-veto gate.",
+      "bytes": 11055,
+      "sha256": "a29d154c92a6e0ba331b44a0fe4d5a67653c2683ae80d857a245facac5bded53"
+    }
+  ]
+}

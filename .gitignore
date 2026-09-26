@@ -23,3 +23,9 @@ research/watched_sources.json
 *.jsonl
 *.log
 *.bak*
+# desk runtime (never commit)
+*.db
+*.db-wal
+*.db-shm
+desk/data/
+desk/reports/

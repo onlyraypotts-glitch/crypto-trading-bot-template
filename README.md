@@ -12,6 +12,50 @@ This is an autonomous-trading engine for **Solana** (Jupiter), **Base** and **Et
 
 New owner? Start with **SETUP.md**.
 
+
+## Let's Get Rich Team: the multi-bot desk (team-v1.0)
+
+A 7-bot crypto research and trading desk (HQ + 6 specialists) for Solana, Base and Ethereum, with an optional Robinhood bot.
+It finds, vets and scores opportunities, then sends **move cards** you execute yourself (FOMO, Phantom, any app) or, if you
+set it up, trades from a **capped** CDP wallet. Research first; **NO TRADE is a valid outcome**. Not financial advice.
+
+| Bot | Job |
+|---|---|
+| **HQ** | Synthesizes (never averages), classifies REJECT / WATCH / DEVELOPING / ACTIONABLE / HIGH_CONFIDENCE, runs the disagreement protocol, writes the daily report and weekly review |
+| **Alpha Hunter** | Discovery: liquidity + holders + real volume growing together (never "the chart is vertical") |
+| **Smart Money** | Wallets with a *realized*, repeatable on-chain record; who's entering and exiting |
+| **Crypto Radar** | News, social velocity, macro, catalysts, narratives, and the market-regime snapshot |
+| **Rug Shield** | Adversarial security review. An evidence-backed REJECT is a **veto** |
+| **Quant Lab** | Calibration, signal lift, strategy leaderboard, bias checks, immutable records, weekly research lab |
+| **Risk & Execution** | Costs, liquidity, exposure, loss ladder. An evidence-backed REJECT is a **veto** |
+
+- **Vetoes can't be outvoted**: `desk/desk.py` enforces it with SQLite triggers (an ACTIONABLE decision fails if a binding veto exists).
+- **Entry bar 0.75**, calibrated and net of costs; it can only be raised automatically (`desk.py audit-bar`), never lowered.
+- **Standing research clause**: every bot keeps researching published results (papers, backtests with costs, post-mortems, track records), turns each into a pre-specified hypothesis, and tests it shadow → paper → small live before it changes any weight. Research never changes hard safety limits.
+- **Guardrails**: no seed phrases or private keys, never moves money in or out, no leverage/margin/perps, no unlimited approvals, manual mode by default, empty track record at start.
+
+### What's in the repo
+| Path | What |
+|---|---|
+| `desk/` | shared SQLite data layer (`desk.py`, stdlib only), role playbooks, `CRYPTO_INTELLIGENCE_OS.md`, `DATA_FEEDS.md`, tools, offline tests. See `desk/README.md` |
+| `prompts/` | the FULL prompts, one skill per file (HQ, 6 roles, protocol, OS, safety rules, autonomous trading, CDP setup, Robinhood trader + rules) |
+| `prompts/MANIFEST.json` | every prompt file with its sha256; the onboarding skill installs prompts only from a **pinned commit** and verifies each hash |
+
+### Quick start
+```
+git clone https://github.com/onlyraypotts-glitch/crypto-trading-bot-template && cd crypto-trading-bot-template
+git checkout team-v1.0                  # or the exact commit SHA listed in the release
+export DESK_DIR="$PWD/desk"              # configurable; defaults to the desk/ folder
+python3 -m unittest discover -s desk/tests -v
+python3 desk/desk.py init && python3 desk/desk.py stats
+```
+Verify prompts: `cd prompts && python3 -c "import json,hashlib;m=json.load(open('MANIFEST.json'));print(all(hashlib.sha256(open(f['file'],'rb').read()).hexdigest()==f['sha256'] for f in m['files']))"`
+
+### Team layout and schedule
+Group chat **Trading Floor**: HQ + Alpha Hunter, Smart Money, Crypto Radar, Rug Shield, Risk & Execution (group chats max
+out at 6). Quant Lab reports to HQ one-to-one; an optional Robinhood bot also works with HQ one-to-one. Suggested staggered
+schedule (ET, adjust to your timezone): see `desk/playbooks/schedule.md`.
+
 ## Layout
 ```
 secrets_loader.py       reads secrets from env vars (optional fallback file via CDP_SECRETS_FILE); never prints values
