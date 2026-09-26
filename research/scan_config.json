@@ -1,0 +1,52 @@
+{
+  "_note": "Scanner settings. Values marked 'scanner' are this tool's own TIGHTENING filters (the prompt gives no number); prompt values are copied, never loosened. Edit owner_* lists to enforce G11 (never buy the owner's own coins).",
+  "owner_addresses": [],
+  "owner_mints": [],
+  "min_liquidity_usd": 50000,
+  "min_volume_24h_usd": 100000,
+  "migration_wait_min": 20,
+  "min_holders": 100,
+  "t6_top10_limit_pct": 30,
+  "t6_top10_limit_established_pct": 60,
+  "t7_cluster_veto_pct": 30,
+  "t7_cluster_elevated_pct": 15,
+  "max_round_trip_pct": 3.0,
+  "max_impact_per_leg_pct": 3.0,
+  "quote_usd": 100,
+  "deep_check_limit": 30,
+  "backtest_horizon_h": 48,
+  "prior_strength": 10,
+  "entry_bar": 0.75,
+  "card_valid_min": 15,
+  "smart_money_enabled": true,
+  "smart_money_lookback_h": 24,
+  "_note_smart_money": "S3 via smart_money.py (Helius, read-only). On by default; only active when the Helius key exists and data/smart_wallets.json has tracked wallets, else S3 = UNKNOWN = 0. Prompt weights and the 0.75 bar are unchanged.",
+  "multichain_enabled": true,
+  "manual_card_chains": [
+    "solana",
+    "base",
+    "ethereum",
+    "bsc",
+    "monad",
+    "robinhood"
+  ],
+  "evm_chains_auto": [
+    "base",
+    "ethereum"
+  ],
+  "evm": {
+    "deep_check_limit": 5,
+    "max_tax_pct": 5.0,
+    "owner_addresses": []
+  },
+  "evm_limit_per_chain": 40,
+  "evm_smart_money_enabled": true,
+  "sui_research_enabled": false,
+  "social_enabled": true,
+  "reddit_max_solana": 5,
+  "reddit_max_evm": 6,
+  "scoring_mode": "prompt",
+  "_note_multichain": "2026-09-25: FOMO manual-card chains (help.fomo.family: Solana, Base, Ethereum, BNB Chain, Monad, Robinhood Chain). Phantom autonomous = evm_chains_auto + Solana only. Sui = research only (no venue). EVM chains run after Solana, one at a time, through the shared limiter.",
+  "_note_scoring": "scoring_mode 'prompt' = the prompt's rule (fixed weights, UNKNOWN = 0, decision confidence = min). 'renormalized' (missing factors excluded + explicit haircut) LOOSENS buying vs the prompt, so set it only after the owner approves the matching §2C wording (SCORING_NOTES.md). The 0.75 bar is unchanged either way.",
+  "_note_social": "S4 via social_data.py (keyless). Reddit search RSS allows ~1 request per 10 s without a key, so calls are spaced 11 s and capped per scan (reddit_max_*)."
+}

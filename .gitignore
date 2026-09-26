@@ -12,3 +12,14 @@ venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+# research tools: runtime data, reports, caches - never commit
+data/
+research/data/
+reports/
+research/reports/
+.http/
+research/.http/
+research/watched_sources.json
+*.jsonl
+*.log
+*.bak*

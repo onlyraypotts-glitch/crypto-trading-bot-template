@@ -29,6 +29,7 @@ scripts/devnet_policy_test.py testnet policy test on THROWAWAY accounts (needs a
 scripts/apply_policy.py       create/update + attach mainnet policies (needs admin key); --print = no API calls
 scripts/dryrun_mainnet.py     real mainnet quotes + guard + tamper tests, never signs
 tests/test_offline.py         offline self-tests (fixtures use randomly generated throwaway addresses)
+research/                     read-only research tools: scanner, shadow tracker, call-channel ingest, narrow-question model (see research/README.md)
 state/                        created at runtime: trades.jsonl, evm_allowances.json, policy ids, results (gitignored)
 ```
 
@@ -123,3 +124,9 @@ The docs are account-scoped: one for the bot EVM account and one for the bot Sol
 - For the 0x Settler, the CDP quote `to` must equal `ownerOf(2)` on the 0x registry (`SETTLER_REGISTRY` in config).
 - Uniswap SwapRouter02 and QuoterV2 addresses come from Uniswap's deployment docs.
 - Re-verify every protocol address before going live.
+
+## Research tools (optional, read-only)
+`research/` contains the scanner, the shadow tracker (it grades scanner picks and public Telegram call channels against real
+price history and flags fake brags), the narrow yes/no question model, per-candidate receipts and an RSI/EMA backtest.
+They never trade. Data goes to `./data` (or `BOT_DATA_DIR`) and is gitignored. Keys (`HELIUS_API_KEY`, optional
+`COINGECKO_DEMO_API_KEY`) come from env only. Start with `research/README.md`.
