@@ -1,0 +1,14 @@
+# secrets and runtime data - never commit
+accounts.json
+state/
+KILL_SWITCH
+.env
+.env.*
+*secrets*.json
+!secrets_loader.py
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
