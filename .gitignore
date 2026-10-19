@@ -29,3 +29,19 @@ research/watched_sources.json
 *.db-shm
 desk/data/
 desk/reports/
+
+# secrets & state (privacy sweep 2026-10-19)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+id_rsa*
+id_ed25519*
+*keypair*.json
+secrets/
+state/
+*.state.json
+*.sqlite
+*.db
