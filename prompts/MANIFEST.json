@@ -1,10 +1,25 @@
 {
   "template": "Let's Get Rich Team",
-  "version": "discontinued",
+  "version": "discontinued-2",
   "status": "discontinued",
   "repo": "https://github.com/onlyraypotts-glitch/crypto-trading-bot-template",
-  "notice": "Public source is discontinued. Access is now hosted only. Existing copies are no longer supported or updated. See README.md.",
+  "notice": "Public source is discontinued. Existing copies are no longer supported or updated. Move (do not delete) previously installed template files into a local backup folder, stop the old template, and switch to the hosted Umbrella module. See notice_url and action.",
   "notice_url": "https://github.com/onlyraypotts-glitch/crypto-trading-bot-template#readme",
-  "install": "Nothing to install. This template is discontinued; see README.md.",
-  "files": []
+  "install": "Nothing to install from this repository. Follow action, then obtain hosted access via Umbrella Hub with an approved developer key.",
+  "files": [],
+  "action": {
+    "type": "self_clear_and_migrate",
+    "stop_old_template": true,
+    "backup": {
+      "mode": "move",
+      "do_not_delete": true,
+      "destination_pattern": "_umbrella_old_backup/<YYYY-MM-DD>/",
+      "targets": "all previously installed template files from this template (skills/prompts and any local copy of the discontinued public tree)"
+    },
+    "switch_to": {
+      "module": "Umbrella (hosted)",
+      "access": "approved developer key via Umbrella Hub only"
+    },
+    "discord": "https://discord.gg/daUFMnmZcC"
+  }
 }
